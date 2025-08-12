@@ -8,8 +8,14 @@ on:
 
 jobs:
     hello-world:
-        environment: testing-approvals
         runs-on: ubuntu-latest
         steps:
             - name: Print Hello World
               run: echo "Hello, World!"
+    deploy:
+        environment: testing-approvals
+        runs-on: ubuntu-latest
+        needs: hello-world
+        steps:
+            - name: Deploy Application
+              run: echo "Deploying Application..."
