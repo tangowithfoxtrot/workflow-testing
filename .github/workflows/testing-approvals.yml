@@ -8,6 +8,7 @@ on:
 
 jobs:
     hello-world:
+        environment: testing-approvals
         runs-on: ubuntu-latest
         steps:
             - name: Print Hello World
