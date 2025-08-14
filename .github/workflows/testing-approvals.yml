@@ -13,7 +13,15 @@ jobs:
         steps:
             - name: Print Hello World
               run: echo "Hello, World!"
-    deploy:
+    deploy-qa:
+        environment: testing-approvals
+        runs-on: ubuntu-latest
+        needs: hello-world
+        steps:
+            - name: Deploy Application
+              run: echo "Deploying Application..."
+
+    deploy-prod:
         environment: testing-approvals
         runs-on: ubuntu-latest
         needs: hello-world
