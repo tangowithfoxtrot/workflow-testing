@@ -13,6 +13,7 @@ permissions:
 jobs:
   Publish:
     name: Publish
+    environment: NPM
     runs-on: ubuntu-24.04
     permissions:
       id-token: write
