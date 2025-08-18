@@ -19,10 +19,22 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4 # v4.1.1
+      - name: Check out repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use your preferred version
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Show NPM Version
+        run: npm --version
 
       - name: Publish to npm
-        run: |
-          npm --version
-          npm publish --access public --provenance --registry=https://registry.npmjs.org/
+        run: npm publish --access public --provenance
+
+      # - name: Publish to npm
+      #   run: |
+      #     npm --version
+      #     npm publish --access public --provenance --registry=https://registry.npmjs.org/
