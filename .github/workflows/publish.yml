@@ -13,7 +13,7 @@ permissions:
 jobs:
   Publish:
     name: Publish
-    runs-on: ubuntu-22.04 # v20230619.1
+    runs-on: ubuntu-24.04
     permissions:
       id-token: write
       contents: read
