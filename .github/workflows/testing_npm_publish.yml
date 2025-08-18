@@ -1,0 +1,26 @@
+name: Publish Npm Package
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  Publish:
+    name: Publish
+    runs-on: ubuntu-22.04 # v20230619.1
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4 # v4.1.1
+
+      - name: Publish to npm
+        run: npm publish --access public --registry=https://registry.npmjs.org/
