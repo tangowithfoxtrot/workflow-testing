@@ -3,6 +3,10 @@
     "version": "0.0.3",
     "description": "Testing npm publish",
     "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pixman20/workflow-testing.git"
+    },
     "scripts": {
         "test": "echo \"No tests specified\" && exit 0"
     },

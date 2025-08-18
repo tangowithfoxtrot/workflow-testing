@@ -31,7 +31,7 @@ jobs:
       - name: Update NPM Version
         run: |
           npm --version
-          npm install -g npm@latest
+          npm install -g npm@11.5.2 # 11.5.1 or later is required for OIDC
           npm --version
 
       - name: Publish to npm
