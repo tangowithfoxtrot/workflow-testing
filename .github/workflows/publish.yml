@@ -33,11 +33,13 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: 24
+          node-version: ${{ steps.retrieve-node-version.outputs.node_version }}
           registry-url: "https://registry.npmjs.org/"
 
-      # - name: Install NPM
-      #   run: npm install npm@11.5.1 # npm 11.5.1 or later is required to publish w/ OIDC
+      - name: Install NPM
+        run: |
+          npm install npm@11.5.2 # npm 11.5.1 or later is required to publish w/ OIDC
+          npm --version
 
       - name: Publish to npm
         run: npm publish --access public
