@@ -36,10 +36,11 @@ jobs:
           node-version: ${{ steps.retrieve-node-version.outputs.node_version }}
           registry-url: "https://registry.npmjs.org/"
 
-      - name: Update NPM Version
-        run: |
-          npm install -g npm@11.5.2 # 11.5.1 or later is required for OIDC
-          npm --version
+      - name: Install Husky
+        run: npm install -g husky
 
-      - name: Publish to npm
+      - name: Install NPM
+        run: npm install npm@11.5.2 # npm 11.5.1 or later is required to publish w/ OIDC\
+
+      - name: Publish to NPM
         run: npm publish --access public
