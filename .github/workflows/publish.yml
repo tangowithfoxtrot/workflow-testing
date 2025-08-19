@@ -37,7 +37,7 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
 
       - name: Install NPM
-        run: npm install npm@11.5.2 # npm 11.5.1 or later is required to publish w/ OIDC
+        run: npm install npm@11.5.1 # npm 11.5.1 or later is required to publish w/ OIDC
 
       - name: Publish to npm
         run: npm publish --access public
