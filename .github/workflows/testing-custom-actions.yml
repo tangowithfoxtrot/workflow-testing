@@ -18,7 +18,7 @@ jobs:
 
       - name: Run composite custom action
         id: composite-action
-        uses: ./actions/testing/composite.yml
+        uses: ./actions/testing/composite
 
       - name: Show Output
         run: |
