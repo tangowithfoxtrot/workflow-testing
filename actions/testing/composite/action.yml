@@ -1,23 +1,19 @@
 name: Testing Composite
 description: Composite action for testing purposes in workflow-testing/actions/testing.
-inputs:
-  example-input:
-    description: Example input for the composite action
-    required: false
-    default: "default-value"
 outputs:
-  example_output:
-    description: Example output from the composite action
-    value: ${{ steps.example-step.outputs.example_output }}
+  static_output:
+    description: Static output from the composite action
+    value: ${{ steps.static-output-test.outputs.static_output }}
 runs:
   using: "composite"
   steps:
-    - name: Example Step
-      id: example-step
+    - name: Static Output Test
+      id: static-output-test
       shell: bash
       run: |
-        echo "Running the composite action with input: ${{ inputs.example-input }}"
-        echo "example_output=Hello from composite" >> $GITHUB_OUTPUT
+        echo "Running the static output test"
+        echo "static_output=Static Output" >> $GITHUB_OUTPUT
+
     - name: Dynamic Output Test
       id: dynamic-output-test
       shell: bash

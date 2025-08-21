@@ -22,5 +22,5 @@ jobs:
 
       - name: Show Output
         run: |
-          echo "Static Output: ${{ steps.composite-action.outputs.example_output }}"
+          echo "Static Output: ${{ steps.composite-action.outputs.static_output }}"
           echo "Dynamic Output: ${{ steps.composite-action.outputs.dynamic_output }}"
