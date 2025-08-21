@@ -24,3 +24,19 @@ jobs:
         run: |
           echo "Static Output: ${{ steps.composite-action.outputs.static_output }}"
           echo "Dynamic Output: ${{ steps.composite-action.outputs.dynamic_output }}"
+
+  docker:
+    name: Docker Action
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+
+      - name: Run composite custom action
+        id: composite-action
+        uses: ./actions/testing/docker
+
+      - name: Show Output
+        run: |
+          echo "Static Output: ${{ steps.composite-action.outputs.static_output }}"
+          echo "Dynamic Output: ${{ steps.composite-action.outputs.dynamic_output }}"

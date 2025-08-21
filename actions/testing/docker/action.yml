@@ -1,0 +1,6 @@
+name: Testing Docker
+description: Docker action for testing purposes in workflow-testing/actions/testing.
+runs:
+  using: docker
+  image: actions/testing/docker/Dockerfile
+  args: []
