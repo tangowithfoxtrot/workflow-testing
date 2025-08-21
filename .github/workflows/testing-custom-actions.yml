@@ -32,11 +32,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
 
-      - name: Run composite custom action
-        id: composite-action
+      - name: Run docker custom action
+        id: docker-action
         uses: ./actions/testing/docker
 
       - name: Show Output
         run: |
-          echo "Static Output: ${{ steps.composite-action.outputs.static_output }}"
-          echo "Dynamic Output: ${{ steps.composite-action.outputs.dynamic_output }}"
+          echo "Static Output: ${{ steps.docker-action.outputs.static_output }}"
+          echo "Dynamic Output: ${{ steps.docker-action.outputs.dynamic_output }}"
+
+  javascript:
+    name: JavaScript Action
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+
+      - name: Run javascript custom action
+        id: javascript-action
+        uses: ./actions/testing/javascript
+
+      - name: Show Output
+        run: |
+          echo "Static Output: ${{ steps.javascript-action.outputs.static_output }}"
+          echo "Dynamic Output: ${{ steps.javascript-action.outputs.dynamic_output }}"
