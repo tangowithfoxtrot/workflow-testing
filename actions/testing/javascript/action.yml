@@ -3,8 +3,6 @@ description: JavaScript action for testing purposes in workflow-testing/actions/
 outputs:
   static_output:
     description: Static output from the JavaScript action
-  dynamic_output:
-    description: Dynamic output from the JavaScript action
 runs:
   using: "node20"
   main: "index.js"
