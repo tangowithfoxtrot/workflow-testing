@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Run bws docker image
         run: |
-          docker run --rm -it ttl.sh/bws:24h --help
+          docker run --rm ttl.sh/bws:24h --help
